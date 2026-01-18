@@ -1,0 +1,86 @@
+#controls {
+  position: relative;
+  width: 100%;
+}
+
+/* Custom dropdown style with down arrow */
+#ply-set-select {
+  font-size: 20px;
+  width: 100%;
+  padding: 15px;
+  padding-right: 50px; /* 화살표 이미지에 대한 공간 확보 */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: white;
+  appearance: none;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNiIgdmlld0JveD0iMCAwIDEwIDYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik01IDZMOS40MjkgMEgwLjU3MDcxTDUgNloiIGZpbGw9IiMzMzMzMzMiLz4KPC9zdmc+Cg=='); /* SVG 화살표 추가 */
+  background-repeat: no-repeat;
+  background-position: right 15px center; /* 화살표 위치 조정 */
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom dropdown options */
+#ply-set-select option {
+  padding: 10px;
+  font-size: 16px;
+}
+
+#ply-set-select:hover {
+  border: 1px solid #888888;
+  font-weight: bold; /* 폰트 굵게 적용 */
+}
+/* Custom Button Styles */
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  background-color: #0066ff;
+  transition: background-color 0.3s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background-color: #0052cc;
+}
+
+button:active {
+  background-color: #003d99;
+}
+
+/* Additional style for specific buttons */
+#toggle-ply2 {
+  background-color: #ff007a;
+  font-size: 20px;
+}
+
+#toggle-ply2:hover {
+  background-color: #e6006f;
+}
+
+#toggle-ply2:active {
+  background-color: #cc0066;
+}
+
+/* Top-down view button customization */
+#top-down-view {
+  background-color: #00cc99;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+#top-down-view:hover {
+  background-color: #00b388;
+}
+
+#top-down-view:active {
+  background-color: #009973;
+}
