@@ -378,3 +378,32 @@ body {
 .equal_contribution{
   font-size: 12px;
 }
+
+.plus-bounce {
+    display: inline-block; /* 애니메이션을 위해 필수 */
+    color: #363636;        /* 강조색 (파란색 예시) */
+    
+    /* animation: 이름 | 한 사이클 시간 | 가속도 | 반복여부 
+       여기서 '3s'가 전체 주기입니다. (점프 + 휴식 포함)
+    */
+    animation: jump-loop 1.5s infinite; 
+  }
+
+@keyframes jump-loop {
+  /* 0% ~ 20%: 점프 동작 구간 (약 0.6초) */
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  30% {
+    transform: translateY(-12px) scale(1.1); /* 위로 솟구치며 약간 커짐 */
+    color: #47AEF0; /* 점프할 때 색상을 살짝 밝게 변경 (선택사항) */
+  }
+  60% {
+    transform: translateY(0) scale(1); /* 착지 */
+  }
+
+  /* 21% ~ 100%: 휴식 구간 (가만히 있음) */
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
