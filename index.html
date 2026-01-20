@@ -7,7 +7,7 @@
   <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Task-Aware Semantic Map</title>
+  <title>Task-Aware Semantic Map++</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -192,12 +192,12 @@
           <h2 class="title is-3 title-centered">Abstract</h2>
           <div class="container">
             <div class="image-center">
-              <img src="./static/images/representative_figure_no_back.png"
+              <img src="./static/images/abstract.jpg"
               alt="Task-Aware Semantic Map++ Representative Figure"
               class="representative-image">
             </div>
-            <p>
-              Abstract Comming Soon
+            <p class="caption">
+              Enabling robots to perform diverse tasks autonomously requires a sophisticated semantic understanding of 3D scenes. However, conventional scene representations, which primarily rely on static attributes like visual information or object labels, have significant limitations in allowing robots to infer context-aware actions. We introduce <strong>Task-Aware Semantic Map++</strong>  (TASMap++), the framework that overcomes these limitations by constructing a map that assigns appropriate tasks to objects based on their holistic context.  While prior work like TASMap pioneered this task-centric approach, it suffered from high computational costs and inaccuracies due to its reliance on single-frame analysis, which often fails to capture an object's complete state. In contrast, TASMap++ resolves these issues with a multi-view synthesis pipeline that integrates multiple perspectives of an object for task assignment, resulting in significantly improved computational efficiency over its predecessor. Furthermore, to overcome biases in the existing TASMap evaluation, we established a reliable benchmark derived from the consensus of 32 participants across 231 cluttered scenes. On this benchmark, TASMap++ demonstrates superior accuracy over baselines. Finally, we introduce context-aware grounding, a paradigm distinct from conventional object grounding that relies on visual and spatial attributes. We present a downstream application of TASMap++ as a method to address this challenge and show experimentally that conventional grounding methods struggle in this setting, whereas TASMap++ is markedly more effective. To confirm these findings, the framework's robustness and practicality were validated through extensive experiments on 3D indoor datasets, including real-world scan datasets.
             </p>
           </div>
         </div>
@@ -210,15 +210,26 @@
   <div class="container main-content">
     <div class="columns is-centered has-text-justified">
       <div class="column is-full-width">
-        <h2 class="title is-3 title-centered">TASMap++ Benchmark</h2>
+        <h2 class="title is-3 title-centered">TASMap++ Benchmark <a href ="http://ec2-43-201-242-118.ap-northeast-2.compute.amazonaws.com/select.html?demo=true"> <i class="fas fa-external-link-alt"></i> </a> </h2> 
+
         <div class="content">
-          <img src="./static/images/main_framework.png"
-          class="interpolation-image"
-          alt="Benchmark Image"/>
-          <p>
-            Benchmark Comming Soon
+          <div class="image-center">
+            <img src="./static/images/benchmark_analysis.jpg" alt="Benchmark Image"/>
+          </div>
+          <p class>
+            On average, each object is assigned approximately 1.3 tasks, confirming that the benchmark annotations are both selective and plausible. Task distributions vary distinctly across different scenarios (e.g., frequent 'Relocate' in disordered scenes), aligning well with the intended semantic context of each setting. A correlation analysis reveals meaningful relationships between tasks, such as strong positive links between complementary actions like mopping and vacuuming. Frequent co-occurrences, such as folding and relocating, further demonstrate logical task groupings made by human annotators. Overall, these consistent patterns and correlations validate that the benchmark captures meaningful structural preferences for task assignment evaluation.
           </p>
         </div>
+
+        <div class="content">
+          <div class="image-center">
+            <img src="./static/images/benchmark_compare.jpg" alt="Benchmark Image"/>
+          </div>
+          <p class>
+            To quantify annotator bias, we analyzed label agreement using Jaccard and F1 scores under three settings: consensus-based TASMap++, single-annotator simulation (TASMap++ Single), and the original TASMap. The results show that TASMap and TASMap++ (Single) achieve similarly low agreement scores, which are significantly lower than those of the consensus-based TASMap++ setting. These lower scores in the single-annotator settings highlight that individual labels are inherently inconsistent and prone to specific annotator biases. This indicates that the original TASMap functions effectively as a single-annotator dataset, inheriting the instability of individual preferences. In contrast, the consensus-based TASMap++ is proven to be a more stable benchmark that consistently captures overall human preferences by mitigating individual bias.
+          </p>
+        </div>
+
       </div>
     </div>
   </div>
@@ -230,11 +241,9 @@
       <div class="column is-full-width">
         <h2 class="title is-3 title-centered">TASMap++ Construction</h2>
         <div class="content">
-          <img src="./static/images/main_framework.png"
-          class="interpolation-image"
-          alt="Framework Figure"/>
+          <img src="./static/images/main_framework.jpg"/>
           <p>
-            Map Construction Comming Soon
+            (Left) Overview of the proposed framework. Given RGB-D sequence and camera pose as input, <strong>3D Instance Segmentation</strong> module returns Object-Segmentation Entity with regarding reconstructed point clouds. Subsequently, through the <strong>Mask Refinement</strong>, <strong>View Selection</strong> and <strong>Task Assignment</strong> modules, we obtain the Object-Task Entity. Based on these two entities, TASMap++ is constructed. (Right) Process of <strong>Context-Aware Grounding</strong> used in experiments.
           </p>
         </div>
       </div>
@@ -246,13 +255,13 @@
   <div class="container main-content">
     <div class="columns is-centered has-text-justified">
       <div class="column is-full-width">
-        <h2 class="title is-3 title-centered">Results</h2>
+        <h2 class="title is-3 title-centered">Results <a href ="#" onclick="alert('Coming soon 😅');"> <i class="fas fa-external-link-alt"></i> </a> </h2>
         <div class="content">
-          <img src="./static/images/main_framework.png"
-          class="interpolation-image"
-          alt="Results Figure"/>
+          <div style="text-align: center;">
+            <img src="./static/images/results.jpg"/>
+          </div>
           <p>
-            Result Comming Soon
+            The center two figure provide visualization of TASMap++. For each object, the assigned task, label, and a unique ID to distinguish between identical labels are displayed. The lower portion shows the objects selected in Context-Aware Object Grounding for 5 explicit (purple) and 3 implicit (blue) queries.
           </p>
         </div>
       </div>

@@ -1,5 +1,6 @@
 body {
   font-family: 'Noto Sans', sans-serif;
+  zoom: 90%;
 }
 
 
@@ -182,7 +183,7 @@ body {
   padding: 0px 0; /* 상하 패딩 */
 }
 .image-center {
-  width: 60%;
+  width: 50%;
   display: flex;
   justify-content: center; /* 이미지를 가로축으로 중앙 정렬 */
   margin: 0 auto;
@@ -386,7 +387,7 @@ body {
     /* animation: 이름 | 한 사이클 시간 | 가속도 | 반복여부 
        여기서 '3s'가 전체 주기입니다. (점프 + 휴식 포함)
     */
-    animation: jump-loop 1.5s infinite; 
+    animation: jump-loop 1.3s infinite; 
   }
 
 @keyframes jump-loop {
@@ -406,4 +407,12 @@ body {
   100% {
     transform: translateY(0) scale(1);
   }
+}
+
+.abstract_section .container.is-max-desktop {
+  max-width: 1200px !important; /* 1200px, 100% 등 원하는 값으로 변경 */
+}
+
+.caption{
+  text-align: center;
 }
